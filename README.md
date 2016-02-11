@@ -5,9 +5,9 @@ Requirement:
 	Python, SQLite3, Django
 	
 Python Packages Required
-  •	NLTK, NLTK data must be installed
-  •	Django security session must be installed
-  •	Scipy
+  - NLTK, NLTK data must be installed
+  - Django security session must be installed
+  - Scipy
 
 Launch The Program
   •	Enter the Farmtotable directory. Run “python manage.py runserver” to start exploring.
