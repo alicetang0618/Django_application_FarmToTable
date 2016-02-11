@@ -29,8 +29,8 @@ Two Ways To Navigate Through Our Site!!!
   - The test data is randomly generated and the relations between objects might not be orderly, so we strongly suggest you to use the empty version for a better sense of how our functions work. 
 
 Site Overview
-	Total number of templates:  42
-	Technologies used: JavaScript, Html, CSS
+- Total number of templates:  42
+- Technologies used: JavaScript, Html, CSS
 
 Functionalities 
 - User: Register, log in, log out, modify profile, upload files. Search, message, like product, shop, checkout and more.
@@ -83,15 +83,15 @@ Rating & Comments
  - 	Buyers can only rate a product after he or she places an order
 
 Message
-	Buyers and sellers can exchange messages.  Go to their profile pages.
+- Buyers and sellers can exchange messages.  Go to their profile pages.
 
 Shopping cart, Check out & Payment
 - Currently users have their accounts registered with our website. 
 - Upon checkout, they could choose to pay differently: online, offline or on delivery. Orders will be received and confirmed by the seller or be canceled by either party. Seller can charge extra delivery fee. 
 
 My Finance
-Monitor your spending in the last three months and view by category.
+- Monitor your spending in the last three months and view by category.
 
 Further Features To Explore
-	Internationalization
-	Balance between traffic and capacity
+- Internationalization
+- Balance between traffic and capacity
