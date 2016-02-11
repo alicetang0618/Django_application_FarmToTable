@@ -20,45 +20,46 @@ Two Ways To Navigate Through Our Site!!!
   - Start exploring our website with an empty back-end database 
   - Register your own users as buyers or sellers and try out the different functionalities.
 
-•	In A Crowd:
-  o	Fixture file contains the testing data and they are preloaded into db.sqlite3. Move it to the directory to interact with it.
-  o	The data should be pre-loaded. In case it is not loaded properly, go to farmtotable directory and run “python manage.py loaddata userprofile_fixture.json > applications.userprofile”
+- In A Crowd:
+  - Fixture file contains the testing data and they are preloaded into db.sqlite3. Move it to the directory to interact with it.
+  - The data should be pre-loaded. In case it is not loaded properly, go to farmtotable directory and run “python manage.py loaddata userprofile_fixture.json > applications.userprofile”
   Fixtures to load for all the models include:
   userprofile, product, order, search, rating, donation, item, cart 
   If cannot load one, try load the others first because some objects need to exist for the others to be created.
-  o	The test data is randomly generated and the relations between objects might not be orderly, so we strongly suggest you to use the empty version for a better sense of how our functions work. 
+  - The test data is randomly generated and the relations between objects might not be orderly, so we strongly suggest you to use the empty version for a better sense of how our functions work. 
 
 Site Overview
 	Total number of templates:  42
 	Technologies used: JavaScript, Html, CSS
 
 Functionalities 
-  •	User: Register, log in, log out, modify profile, upload files. Search, message, like product, shop, checkout and more.
-    o	Seller:
-      ♣	Register product
-      ♣	Modify product
-      ♣	Cannot leave comments 
-      ♣	No product will be recommended for seller
-    o	Buyer:
-      ♣	Being recommended product
-      ♣	Leave comments
+- User: Register, log in, log out, modify profile, upload files. Search, message, like product, shop, checkout and more.
+    - Seller:
+      - Register product
+      - Modify product
+      - Cannot leave comments 
+      - No product will be recommended for seller
+    - Buyer:
+      - Being recommended product
+      - Leave comments
       
 Special Features
 
 Session security
-  o	Automatically logged out after 10 minutes.
-  o	Automatically logged out after closing browser
+  - Automatically logged out after 10 minutes.
+  - Automatically logged out after closing browser
 
 Search
-  •	User, buyer and guests can search
-  •	Search history will be stored in the search model:
-  o	For registered users it will store the user’s profile, search term, product origin, product category and time. 
-  •	NLTK:
-  o	Search term is case-insensitive, order-insensitive, singular or plural insensitive
-  o	Can type in multiple words
-  o	Adjectives and nouns are interpreted through NLTK for more accurate search
-  •	Search in index rather than making direct query to the database. Index is automatically updated each time a product is added. 
-  •	Search for key words in both product names and descriptions: product whose names contain the key term will appear first. 
+  - User, buyer and guests can search
+  - Search history will be stored in the search model:
+	  - For registered users it will store the user’s profile, search term, product origin, product category and time. 
+  - NLTK:
+	  - Search term is case-insensitive, order-insensitive, singular or plural insensitive
+	  - Can type in multiple words
+	  - Adjectives and nouns are interpreted through NLTK for more accurate search
+  - Search in index rather than making direct query to the database. Index is automatically updated each time a product is added. 
+  - Search for key words in both product names and descriptions: product whose names contain the key term will appear first. 
+
 Recommendation
   •	Sources of data:
   o	User liked product
