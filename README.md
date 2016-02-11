@@ -61,26 +61,26 @@ Search
   - Search for key words in both product names and descriptions: product whose names contain the key term will appear first. 
 
 Recommendation
-  •	Sources of data:
-  o	User liked product
-  o	User order history
-  o	User rating
-  •	Two-way recommendation:
+- Sources of data:
+  - 	User liked product
+  - 	User order history
+  - 	User rating
+- Two-way recommendation:
   Algorithm:
-  o	Calculate the Pearson coefficient as the indicator for similarity
-  o	Arrays supplied: 
-  o	index = product.id – 1; 
-  o	value = average rating of a product or times the user bought this product
-  •	Filter by user
-  o	Recommend high rated product bought by similar users 
+  - 	Calculate the Pearson coefficient as the indicator for similarity
+  - 	Arrays supplied: 
+  - 	index = product.id – 1; 
+  - 	value = average rating of a product or times the user bought this product
+- Filter by user
+  - 	Recommend high rated product bought by similar users 
 
-Filter by product
-  o	Find your liked and highly rated product you bought
-  o	Recommend similar product  
+- Filter by product
+  - 	Find your liked and highly rated product you bought
+  - 	Recommend similar product  
 
 Rating & Comments
-  o	Buyers can rate user and product
-  o	Buyers can only rate a product after he or she places an order
+ - 	Buyers can rate user and product
+ - 	Buyers can only rate a product after he or she places an order
 
 Message
 	Buyers and sellers can exchange messages.  Go to their profile pages.
