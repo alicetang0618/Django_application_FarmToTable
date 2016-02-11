@@ -22,9 +22,9 @@ Two Ways To Navigate Through Our Site!!!
 
 - In A Crowd:
   - Fixture file contains the testing data and they are preloaded into db.sqlite3. Move it to the directory to interact with it.
-  - The data should be pre-loaded. In case it is not loaded properly, go to farmtotable directory and run “python manage.py loaddata userprofile_fixture.json > applications.userprofile”
+  - The data should be pre-loaded. In case it is not loaded properly, go to farmtotable directory and run “python manage.py loaddata userprofile_fixture.json > applications.userprofile”.
   Fixtures to load for all the models include:
-  userprofile, product, order, search, rating, donation, item, cart 
+  userprofile, product, order, search, rating, donation, item, cart.
   If cannot load one, try load the others first because some objects need to exist for the others to be created.
   - The test data is randomly generated and the relations between objects might not be orderly, so we strongly suggest you to use the empty version for a better sense of how our functions work. 
 
@@ -90,7 +90,7 @@ Shopping cart, Check out & Payment
 - Upon checkout, they could choose to pay differently: online, offline or on delivery. Orders will be received and confirmed by the seller or be canceled by either party. Seller can charge extra delivery fee. 
 
 My Finance
-	Monitor your spending in the last three months and view by category.
+Monitor your spending in the last three months and view by category.
 
 Further Features To Explore
 	Internationalization
