@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+	{% block body %}
+	<head>
+	    <title>My Messages</title>
+	</head>
+	<body>
+		<h1>My Messages</h1>
+		{% if num_rece == 0 %}
+		<p>You haven't received any messages yet!</p>
+		{% else %}
+		<ul>
+		{% for message in receive %}
+		<li>
+		<p>Sender: {{message.sender.first_name}} {{message.sender.last_name}}</p>
+		<p>Time: {{message.time}}</p>
+		<a href="{% url 'message' message.id %}">View Message</a>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+
+		<h1>Messages I sent</h1>
+		{% if num_sent == 0 %}
+		<p>You haven't sent any messages yet!</p>
+		{% else %}
+		<ul>
+		{% for message in sent %}
+		<li>
+		<p>Receiver: {{message.receiver.first_name}} {{message.receiver.last_name}}</p>
+		<p>Time: {{message.time}}</p>
+		<a href="{% url 'message' message.id %}">View Message</a>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+	</body>
+{% endblock %}

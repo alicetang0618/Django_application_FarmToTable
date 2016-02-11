@@ -1,0 +1,60 @@
+[
+{
+    "fields": {
+        "picture": "",
+        "first_name": "Hong",
+        "last_name": "Xiao",
+        "phone": "7678909879",
+        "introduction": "First time selling things online. Hope you like my product",
+        "zipcode": "382923",
+        "usertype": "S",
+        "state": "Chongqing",
+        "user": 1,
+        "address": "Beiqu Rd51",
+        "account": "191",
+        "pending_payment": "0",
+        "shopping_cart": [],
+        "email": "xhong@farmer.org"
+    },
+    "model": "applications.userprofile",
+    "pk": 1
+},
+{
+    "fields": {
+        "picture": "profile_images/student.jpg",
+        "first_name": "Jia",
+        "last_name": "Nan",
+        "phone": "4459399393",
+        "introduction": "Fun loving foodie",
+        "zipcode": "100000",
+        "usertype": "B",
+        "state": "Beijing",
+        "user": 2,
+        "address": "1799 Renmin Road",
+        "account": "9",
+        "pending_payment": "0",
+        "shopping_cart": [],
+        "email": "jianan22@organic.com"
+    },
+    "model": "applications.userprofile",
+    "pk": 2
+},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Zhou", "account": "191", "phone": "2839380922", "user": 3, "address": "Xiaoshan Village", "shopping_cart": [], "first_name": "Zhonglun", "introduction": "This is an awesome platform", "zipcode": "382923", "usertype": "S", "state": "Changsha", "pending_payment": "0", "email": "seller@farmer.org"}, "model": "applications.userprofile", "pk": 3},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Zheng", "account": "191", "phone": "2839380922", "user": 4, "address": "Xiaoshan Village", "shopping_cart": [], "first_name": "Hong", "introduction": "Hello, I like selling things online", "zipcode": "382923", "usertype": "S", "state": "Yunan", "pending_payment": "0", "email": "seller@farmer.org"}, "model": "applications.userprofile", "pk": 4},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Zhou", "account": "191", "phone": "8273849284", "user": 5, "address": "Xiaoshan Village", "shopping_cart": [], "first_name": "Feng", "introduction": "First time selling things online.", "zipcode": "382923", "usertype": "S", "state": "Beijing", "pending_payment": "0", "email": "seller@farmer.org"}, "model": "applications.userprofile", "pk": 5},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Li", "account": "191", "phone": "2839380922", "user": 6, "address": "Xiaoshan Village", "shopping_cart": [], "first_name": "Jianan", "introduction": "First time selling things online.", "zipcode": "382923", "usertype": "S", "state": "Chongqing", "pending_payment": "0", "email": "seller@farmer.org"}, "model": "applications.userprofile", "pk": 6},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Zhou", "account": "191", "phone": "8273849284", "user": 7, "address": "Xiaoshan Village", "shopping_cart": [], "first_name": "Zhonglun", "introduction": "This is an awesome platform", "zipcode": "382923", "usertype": "S", "state": "Chongqing", "pending_payment": "0", "email": "seller@farmer.org"}, "model": "applications.userprofile", "pk": 7},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Wu", "account": "191", "phone": "8273849284", "user": 8, "address": "Xiaoshan Village", "shopping_cart": [], "first_name": "Jianan", "introduction": "My product is organic and I hope you like them", "zipcode": "382923", "usertype": "S", "state": "Beijing", "pending_payment": "0", "email": "seller@farmer.org"}, "model": "applications.userprofile", "pk": 8},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Wang", "account": "191", "phone": "2839380922", "user": 9, "address": "Xiaoshan Village", "shopping_cart": [], "first_name": "Zhonglun", "introduction": "Hello, I like selling things online", "zipcode": "382923", "usertype": "S", "state": "Yunan", "pending_payment": "0", "email": "seller@farmer.org"}, "model": "applications.userprofile", "pk": 9},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Wang", "account": "191", "phone": "2839380922", "user": 10, "address": "Xiaoshan Village", "shopping_cart": [], "first_name": "Chang", "introduction": "Hope you like my product", "zipcode": "382923", "usertype": "S", "state": "Yunan", "pending_payment": "0", "email": "seller@farmer.org"}, "model": "applications.userprofile", "pk": 10},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Zhou", "account": "2000", "phone": "5677655693", "user": 11, "address": "Beiqu Rd51", "shopping_cart": [], "first_name": "Yiyi", "introduction": "I love a healthy lifestyle", "zipcode": "382923", "usertype": "B", "state": "Xinjiang", "pending_payment": "0", "email": "buyer11@farmer.org"}, "model": "applications.userprofile", "pk": 11},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Qian", "account": "2000", "phone": "5677655693", "user": 12, "address": "Beiqu Rd52", "shopping_cart": [], "first_name": "Qian", "introduction": "I love a healthy lifestyle", "zipcode": "382923", "usertype": "B", "state": "Xinjiang", "pending_payment": "0", "email": "buyer12@farmer.org"}, "model": "applications.userprofile", "pk": 12},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Sun", "account": "2000", "phone": "0987890987", "user": 13, "address": "Beiqu Rd53", "shopping_cart": [], "first_name": "Hong", "introduction": "Fun loving foodie", "zipcode": "382923", "usertype": "B", "state": "Chongqing", "pending_payment": "0", "email": "buyer13@farmer.org"}, "model": "applications.userprofile", "pk": 13},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Sun", "account": "2000", "phone": "5677655693", "user": 14, "address": "Beiqu Rd54", "shopping_cart": [], "first_name": "Ning", "introduction": "Looking for organice produce", "zipcode": "382923", "usertype": "B", "state": "Xinjiang", "pending_payment": "0", "email": "buyer14@farmer.org"}, "model": "applications.userprofile", "pk": 14},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Zheng", "account": "2000", "phone": "5677655693", "user": 15, "address": "Beiqu Rd55", "shopping_cart": [], "first_name": "Qian", "introduction": "I love a healthy lifestyle", "zipcode": "382923", "usertype": "B", "state": "Chongqing", "pending_payment": "0", "email": "buyer15@farmer.org"}, "model": "applications.userprofile", "pk": 15},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Li", "account": "2000", "phone": "5677655693", "user": 16, "address": "Beiqu Rd56", "shopping_cart": [], "first_name": "Qian", "introduction": "Looking for organice produce", "zipcode": "382923", "usertype": "B", "state": "Chongqing", "pending_payment": "0", "email": "buyer16@farmer.org"}, "model": "applications.userprofile", "pk": 16},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Sun", "account": "2000", "phone": "0987890987", "user": 17, "address": "Beiqu Rd57", "shopping_cart": [], "first_name": "Hong", "introduction": "Looking for organice produce", "zipcode": "382923", "usertype": "B", "state": "Chongqing", "pending_payment": "0", "email": "buyer17@farmer.org"}, "model": "applications.userprofile", "pk": 17},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Zhao", "account": "2000", "phone": "5677655693", "user": 18, "address": "Beiqu Rd58", "shopping_cart": [], "first_name": "Qian", "introduction": "Fun loving foodie", "zipcode": "382923", "usertype": "B", "state": "Nanchang", "pending_payment": "0", "email": "buyer18@farmer.org"}, "model": "applications.userprofile", "pk": 18},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Zheng", "account": "2000", "phone": "5677655693", "user": 19, "address": "Beiqu Rd59", "shopping_cart": [], "first_name": "Chang", "introduction": "Fun loving foodie", "zipcode": "382923", "usertype": "B", "state": "Guilin", "pending_payment": "0", "email": "buyer19@farmer.org"}, "model": "applications.userprofile", "pk": 19},
+{"fields": {"picture": "profile_images/student.jpg", "last_name": "Li", "account": "2000", "phone": "5677655693", "user": 20, "address": "Beiqu Rd51", "shopping_cart": [], "first_name": "Kun", "introduction": "I love a healthy lifestyle", "zipcode": "382923", "usertype": "B", "state": "Nanchang", "pending_payment": "0", "email": "buyer20@farmer.org"}, "model": "applications.userprofile", "pk": 20}
+]

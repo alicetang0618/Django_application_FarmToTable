@@ -1,0 +1,201 @@
+[
+{
+    "fields": {
+        "category": "O",
+        "picture": "product_images/eggy_oxgMAsn.jpeg",
+        "name": "Egg",
+        "production_date": "2015-03-09T21:43:14Z",
+        "expiration_date": "2015-04-03T00:00:00Z",
+        "price": "3",
+        "description": "Organic",
+        "liked_by": [
+            16,20,14,13,18
+        ],
+        "origin": "Chengdu",
+        "owner": 1,
+        "unit": "Dozen",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 1
+},
+{
+    "fields": {
+        "category": "M",
+        "picture": "product_images/beef_iGhwDgs.jpeg",
+        "name": "Beef",
+        "production_date": "2015-03-09T21:43:40Z",
+        "expiration_date": "2015-03-20T00:00:00Z",
+        "price": "80",
+        "description": "very healthy",
+        "liked_by": [
+            12,17,15,19,13
+        ],
+        "origin": "Beijing",
+        "owner": 3,
+        "unit": "Kg",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 2
+},
+{
+    "fields": {
+        "category": "F",
+        "picture": "product_images/banana_qsOFXxJ.jpeg",
+        "name": "Dried banana",
+        "production_date": "2015-03-09T21:44:11Z",
+        "expiration_date": "2015-04-02T00:00:00Z",
+        "price": "50",
+        "description": "Good for children",
+        "liked_by": [
+        ],
+        "origin": "Hainan",
+        "owner": 3,
+        "unit": "Kg",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 3
+},
+{
+    "fields": {
+        "category": "F",
+        "picture": "product_images/apple_1nuJJB1.jpeg",
+        "name": "Apple",
+        "production_date": "2015-03-09T21:45:12Z",
+        "expiration_date": "2015-03-23T00:00:00Z",
+        "price": "40",
+        "description": "Good for woman",
+        "liked_by": [
+            19,15,11,17,13
+        ],
+        "origin": "Shandong",
+        "owner": 1,
+        "unit": "Kg",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 4
+},
+{
+    "fields": {
+        "category": "V",
+        "picture": "product_images/cucu.jpeg",
+        "name": "Cucumber",
+        "production_date": "2015-03-09T21:46:17Z",
+        "expiration_date": "2015-03-20T00:00:00Z",
+        "price": "15",
+        "description": "Make you pretty, Vitammin C",
+        "liked_by": [
+        14,13,1
+        ],
+        "origin": "Chongqing",
+        "owner": 1,
+        "unit": "Kg",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 5
+},
+{
+    "fields": {
+        "category": "F",
+        "picture": "product_images/orange_SmB3298.jpg",
+        "name": "Orange",
+        "production_date": "2015-03-09T21:47:02Z",
+        "expiration_date": "2015-05-03T00:00:00Z",
+        "price": "20",
+        "description": "Vitamin C",
+        "liked_by": [
+            17,19,20,15,18,14,11
+        ],
+        "origin": "Nanchang",
+        "owner": 3,
+        "unit": "Kg",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 6
+},
+{
+    "fields": {
+        "category": "F",
+        "picture": "product_images/grapes_9ECdvhZ.jpeg",
+        "name": "Organic Grapes",
+        "production_date": "2015-03-09T21:47:36Z",
+        "expiration_date": "2015-04-03T00:00:00Z",
+        "price": "34",
+        "description": "Good for your eyes health",
+        "liked_by": [
+        13,15,14
+        ],
+        "origin": "30",
+        "owner": 1,
+        "unit": "Kg",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 7
+},
+{
+    "fields": {
+        "category": "M",
+        "picture": "product_images/pork_uvmGkdI.jpeg",
+        "name": "Organic Pork",
+        "production_date": "2015-03-09T21:48:08Z",
+        "expiration_date": "2015-03-20T00:00:00Z",
+        "price": "40",
+        "description": "Healthy",
+        "liked_by": [
+        17,11,19
+        ],
+        "origin": "Rongchang",
+        "owner": 3,
+        "unit": "Kg",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 8
+},
+{
+    "fields": {
+        "category": "V",
+        "picture": "product_images/driedmush.jpeg",
+        "name": "Dried mushroom",
+        "production_date": "2015-03-09T21:48:42Z",
+        "expiration_date": "2015-04-10T00:00:00Z",
+        "price": "20",
+        "description": "Good for women's health",
+        "liked_by": [
+        1,16,12,13,12,20
+        ],
+        "origin": "Beijing",
+        "owner": 1,
+        "unit": "Kg",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 9
+},
+{
+    "fields": {
+        "category": "O",
+        "picture": "product_images/eggking.jpeg",
+        "name": "Organic egg",
+        "production_date": "2015-03-09T21:49:23Z",
+        "expiration_date": "2015-03-20T00:00:00Z",
+        "price": "30",
+        "description": "Good for children",
+        "liked_by": [
+        1,16,15,11,12,18
+        ],
+        "origin": "Shanghai",
+        "owner": 3,
+        "unit": "Dozen",
+        "quantity": 5000
+    },
+    "model": "applications.product",
+    "pk": 10
+}
+]

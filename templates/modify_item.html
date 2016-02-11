@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+	<head>
+	    <title>Modify Item</title>
+	</head>
+	<body>
+		<h1>Modify An Item</h1>
+		<br />
+		<p>{{ item.product.name }}</p>
+		  <form action="" method="post">
+		  	  {% csrf_token %}
+		      {{ form }}
+		      <input type="submit" value="Modify">
+		  </form>
+		{% if modified %}
+		<p><strong> You have successfully modified the item! </strong></p>
+		{% endif %}
+		<br></br><a href="/shopping_cart/">Return to My Shopping Cart</a>
+	</body>
+{% endblock %}

@@ -1,0 +1,18 @@
+body {
+	background: url("images/introbackground.png"); 
+}
+
+p {
+	padding-top: 70px;
+ 	padding-bottom: 30px;
+	font:40px Helvetica; 
+  	font-weight: bold;
+  	color: Beige;
+	text-align: center;
+}
+
+.links {
+	font: 30px Helvetica;
+	font-weight:bold;
+	text-align: center;
+}

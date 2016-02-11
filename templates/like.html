@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+		<title>My Favorite</title>
+		<h1>My Favorite Products</h1>
+		{% if num == 0 %}
+		<p>You haven't liked any products yet.</p>
+		{% else %}
+		<ul>
+		{% for like in likes %}
+		<li>
+		    <a href="{% url 'product' like.id %}">
+		    {{ like.name }}</a>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+{% endblock %}

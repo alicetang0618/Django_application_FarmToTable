@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    <script type="text/javascript">
+
+            function response(){
+                alert("You have successfully submitted your confirmation!");
+            }
+
+            function cancelresponse(){
+                alert("You have successfully submitted your cancel request!");
+            }
+            
+    </script>
+{% endblock %}
+
+{% block body %}
+
+<h1>My Order</h1>
+    <p>
+    {% if user.profile.usertype == 'B' %}
+        Seller: <a href="{% url 'profile' order.seller.id %}">{{ order.seller.first_name }} {{ order.seller.last_name }}</a>
+    {% else %}
+        Buyer: <a href="{% url 'profile' order.buyer.id %}">{{ order.buyer.first_name }} {{ order.buyer.last_name }}</a>
+    {% endif %}
+    </p>
+    <p>Status: {{ order.status }}</p>
+    <p>Order Time: {{ order.ordertime }}</p>
+    <p>Deliver Time: {{ order.delivertime }}</p> 
+    <p>Receive Time: {{ order.receivetime }}</p>
+    <p>Pay Method: {{ order.payment }}</p>   
+    <p>Deliver Fees: {{ order.deliveryfees }}</p>
+    <p>Message from buyer: {{ order.message }}</p></br>
+    <p>Amount: ${{ amount }}</p>
+    <p>Items:</p>
+    {% if order.status == 'R' and user.profile.usertype == 'B' %}
+        <p>Click on the item to write a comment or give a rating!</p>
+    {% endif %}
+    <ul>
+    {% for item in order.items.all %}
+    <li>
+        {{item.product.name}}: {{ item.quantity }}, {{ item.product.price }} per {{ item.product.unit }}
+        {% if order.status == 'R' and user.profile.usertype == 'B' %}
+        <a href="{% url 'product' item.product.id %}">Comment or Rate</a>
+        {% endif %}
+    </li>
+    {% endfor %}   
+    </ul>
+    <p><strong>Update Order Status</strong></p>
+    {% if user.profile.usertype == 'B' %}
+        {% if order.status == 'X' %}
+        <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" name="x2p" value="Proceed the Order" />
+        </form>
+        {% else %}
+            {% if order.status == 'D' %}
+            <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" name="d2r" onclick="response()" value="Receive Confirmation" />
+            </form>
+            {% else %}
+            {% if order.status != "D" and order.status != "R" and order.status != "CA" %}
+            <form action="" method="post">
+             {% csrf_token %}
+            <input type="submit" name="cancel" onclick="cancelresponse()" value="Cancel the Order" />
+             </form>
+            {% else %}
+            <p>You don't need to update the status now!</p>
+            {% endif %}
+            {% endif %}
+        {% endif %}
+    {% else %}
+        {% if order.status == 'P' or order.status == 'S' %}
+        <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" name="p2c" onclick="response()" value="Confirm the Order" />
+        </form>
+        {% else %}
+            {% if order.status == 'CS' %}
+            {% if not filled %}
+            <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p>Please update deliver fee information here!</p>
+            <input type="submit" name="fee" value="Charge Delivery Fees" />
+            </form>
+            {% else %}
+            <p>You have successfully updated deliver fees!</p>
+            {% endif %}
+            <form action="" method="post">
+            {% csrf_token %}
+            <p>After submitting deliver fee information, confirm delivery here!</p>
+            <input type="submit" name="c2d" onclick="response()" value="Delivery Confirmation" />
+            </form>
+            {% else %}
+            <p>You don't need to update the status now!</p>            
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+{% endblock %}

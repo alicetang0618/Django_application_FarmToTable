@@ -1,0 +1,45 @@
+.col {
+  text-align: center;
+  display: table-cell;
+}
+
+.col p {
+
+  font: 20px;
+  text-align: left;
+  color:#016B1C;
+}
+
+.explore {
+	color: Green;
+	font-size:30px;
+	text-align: center
+}
+
+.intro p {
+	color:Green;
+	font-weight: bold;
+	font-size:40px;
+}
+.col a {
+  font:20px;
+  font-weight: bold;
+  text-align: center;
+  color:#016B1C;
+}
+
+.search {
+  font:14px ;
+  font-weight: bold;
+  color:#5a5a5b;
+}
+
+
+.ad {
+  text-align: center;
+}
+
+.footer li{
+	font-size: 14px;
+	display: inline;
+}

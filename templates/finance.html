@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<title>My Finance</title>
+<h1>My Finance</h1>
+<h3>My Account</h3>
+<p>Account Balance: ${{user.profile.account}}</p>
+<p>Pending Payment: ${{user.profile.pending_payment}}</p>
+<p>Net Balance: ${{net}}</p><br/>
+{% if user.profile.usertype == "B" %}
+<h3>Spending by categories in last three months</h3>
+<img src="{% url 'spend_categories' %}" alt="" />
+<h3>Total Spending</h3>
+<p>Your total spending in last month: ${{month_spend}}</p>
+<p>Your total spending in last three months: ${{3_month_spend}}</p>
+<p>Your total spending in last year: ${{year_spend}}</p>
+{% else %}
+<h3>Revenue by categories in last three months</h3>
+<img src="{% url 'revenue_categories' %}" alt="" />
+<h3>Total Revenue</h3>
+<p>Your total revenue in last month: ${{month_reve}}</p>
+<p>Your total revenue in last three months: ${{3_month_reve}}</p>
+<p>Your total revenue in last year: ${{year_reve}}</p>
+{% endif %}
+
+{% endblock %}

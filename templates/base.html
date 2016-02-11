@@ -1,0 +1,45 @@
+
+{% include 'session_security/all.html' %}
+{% load staticfiles %}
+<!doctype html>
+<html>
+
+<head>
+    {% block title %}
+    {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css"/>
+</head>
+
+<body>
+<div class = "user">
+  {% if user.is_authenticated %}
+  <p>Hello {{user.username}}!</p>
+    <li><a href="/home">Home</a><li>  
+   <li><a href="/logout/">Logout</a></li>
+   <li><a href="/my_profile/">My Profile</a><li>
+   <li><a href="/my_orders/">My Order</a><li>
+   <li><a href="/finance/">My Finance</a><li>
+   <li><a href="/my_messages/">My Message</a><li>
+
+   {% if user.profile.usertype == 'B' %}    
+   <li><a href="/like">My Favorite</a></li>
+   <li><a href="/shopping_cart">My Shopping Cart</a></li>
+   {% else %}
+   <li><a href="/my_products">My Product</a><li>
+   {% endif %}
+   
+	{% else %}
+  <p>Hello friend!</p>
+    <li><a href="/home">Home</a><li>
+   <li><a href="/register/">Register Here</a></li>
+    <li><a href="/login/">Login</a></li>
+
+	{% endif %}
+</div>
+
+	{% block body %}
+    {% endblock %}
+
+</body>
+
+</html>

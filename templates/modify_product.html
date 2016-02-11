@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+	{% block body %}
+		<title>Modify Product</title>
+		<h1>Modify A Product</h1>
+		<br />
+		  <form action="" method="post">
+		  	  {% csrf_token %}
+		      {{ form }}
+		      <input type="submit" value="Modify">
+		  </form>
+		{% if modified %}
+		<p><strong> You have successfully modified the product! </strong></p>
+		{% endif %}
+		<a href="{% url 'product' product.id %}">Return to the product page</a><br><br/>
+	{% endblock %}

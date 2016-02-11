@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	<script type="text/javascript">
+
+            function response(){
+                alert("You have successfully submitted your message!");
+            }
+
+    </script>
+{% endblock %}
+
+{% block body %}
+<h1>View Message</h1>
+<p>Sender: {{message.sender.first_name}} {{message.sender.last_name}}</p>
+<p>Time: {{message.time}}</p>
+<p>Message: {{message.text}}</p>
+<h1>Reply to the Sender / Send Another Message</h1>
+<form action="" method="post">
+		  	  {% csrf_token %}
+		      {{ messageform.as_p }}
+<input type="submit" onclick="response()" value="Send the Message">
+</form>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!doctype html>
+{% include 'session_security/all.html' %}
+{% load staticfiles %}
+<html>
+		<title>My Profile</title>
+	
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css"/>
+	</head>
+
+	<body>
+		<body>
+<div class = "user">
+  <p>Hello {{user.first_name}}!</p>
+    <li><a href="/home">Home</a><li>  
+   <li><a href="/logout/">Logout</a></li>
+   <li><a href="/my_profile/">My Profile</a><li>
+   <li><a href="/my_orders/">My Orders</a><li>
+   <li><a href="/finance/">My Finance</a><li>
+   <li><a href="/my_messages/">My Messages</a><li>
+
+   {% if user.profile.usertype == 'B' %}    
+   <li><a href="/like">My Favorite</a></li>
+   <li><a href="/shopping_cart">My Shopping Cart</a></li>
+   {% else %}
+   <li><a href="/my_products">My Product</a><li>
+   {% endif %}
+</div>
+		<h1>My Profile</h1>
+		<p>My name: {{user.first_name}} {{user.last_name}}</p>
+		{% if user.profile.usertype == "B" %}
+		<p>Account type: Buyer</p>
+		{% else %}
+		<p>Account type: Seller</p>
+		{% endif %}
+		<p>Phone: {{user.phone}}</p>
+		<p>Email: {{user.email}}</p>
+		<p>Address: {{user.address}}</p>
+		<p>state: {{user.state}}</p>
+		<p>Zipcode: {{user.zipcode}}</p>
+		<p>Introduction: {{user.introduction}}</p>
+		<div class = "image"><img src = "{{ MEDIA_URL }}{{user.picture}}" style="width:600px;height:400px"/></div>
+
+		<br></br><a href="/modify_profile/">Modify My Profile</a>
+		<br></br><a href="{% url 'profile' user.id %}">View My Profile: Public Available Version</a><br></br>
+	</body>
+
+</html>

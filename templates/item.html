@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+	<head>
+	    <title>{{ item.product.name }}</title>
+	    <script type="text/javascript">
+
+	    	function removeresponse(){
+	    		alert("You have successfully removed this item from your shopping cart!");
+	    	}
+
+	    </script>
+	</head>
+	<body>
+		<h1>{{ item.product.name }}</h1>
+		<p>Quantity: {{ item.quantity }}</p>
+		<p>Price: {{ item.product.price }} per {{ item.product.unit }}</p>
+		<p>Total Amount: {{ amount }}</p>
+
+		<form method="post">
+		    {% csrf_token %}
+		    <input type="hidden" name="item_id" value="{{ item.id }}" />
+		    <input type="submit" name="remove" onclick="removeresponse()" value="Remove" />
+		    <input type="submit" name="modify" value="Modify" />
+		</form>
+
+		<a href="/shopping_cart/">Shopping Cart</a>
+	</body>
+{% endblock %}

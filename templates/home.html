@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css"/>
+        <div class="search">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" name = "search" value="Search"/>
+            </form>
+        </div>
+
+      <div class="ad">
+          <img src="/static/css/images/backgroundhome.jpg" alt="ads" style="width:1000px;height:600px">
+      </div>
+
+      <div class = "intro">
+        <p> Meet your local farmer </p>
+        <p> Shop organic produce online </p>
+      </div>
+      
+      <div class ="explore">
+        <p>Start Explore</p>
+      </div>
+
+      <div class="col">
+        </br>
+          <a href = "/best_seller">Best sellers</a><br/> 
+          <p>|  The most popular fresh product online. 
+      </div>
+
+
+      <div class="col">
+        <p>     </p>
+      </div>
+      
+      
+
+      <div class ="col">
+        <div id="2">
+        </br>
+          <a href = "/recommend">Guess what you like</a><br/>
+          <p>|    We just found the best deals just for you. Take a look before they are gone!</p>
+        </div>
+      </div>
+
+        <div class="col">
+        <p>     </p>
+      </div>
+        
+      <div class ="col">
+        <div id="3">
+        </br>
+          <a href = "/demand">What's in demand?</a><br/>
+          <p>|    Think we should add more options and can't find what you need? Come here and let our farmers know what you like! </p>
+        </div>
+      </div>
+      
+      
+      <footer class="footer">
+          <hr/>
+              <li>© Copyright 2015-</li>
+                <li><a href="/aboutus/">About Us</a></li>
+                <li><a href="/ourteam/">Our Team</a></li>
+                <li><a href="/contactus/">Contact Us</a></li>
+                <li><a href="/career">Career</a></li>
+      </footer>
+
+{% endblock %}
+    

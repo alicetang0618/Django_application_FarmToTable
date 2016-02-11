@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block body %}
+	    <title>Recommended For You</title>
+		<h1>Recommended For You</h1>
+		
+		{% if user.profile.usertype == "S" %}
+		<p>Sorry, this page is designed for buyers. Interested in buying things from our website? Open another account and register as a buyer!</p>
+		<a href="/register/">Register</a>
+		{% else %}
+
+		<h3>Products liked by users similar to you</h3>
+		{% if num_user == 0 %}
+		<p>Sorry, we can't find provide valid recommendations based on the information we currently have. Please try to search for products of interests and try again!</p>
+		{% else %}
+		<p>Click on the name of a product to view details!</p>
+		<ul>
+		{% for product in products_user %}
+		<li>
+		    <a href="{% url 'product' product.id %}">
+		    {{ product.name }}</a>
+		</li>
+		{% endfor %}
+		</ul></br>
+		{% endif %}
+
+		<h3>Products similar to those liked by you</h3>
+		{% if num_prod == 0 %}
+		<p>Sorry, we can't find similar products based on the information we currently have. Please try to search for products of interests and try again!</p>
+		{% else %}
+		<p>Click on the name of a product to view details!</p>
+		<ul>
+		{% for product in products_prod %}
+		<li>
+		    <a href="{% url 'product' product.id %}">
+		    {{ product.name }}</a>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+
+		{% endif %}
+{% endblock %}

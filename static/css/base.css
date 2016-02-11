@@ -1,0 +1,18 @@
+.user a {
+  color: #5a5a5b;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-transform: uppercase;
+}
+
+.user li {
+  display: inline;
+}
+
+.user p {
+  color: Green;
+  font-size: 17px;
+  font-weight: bold;
+  display:inline;
+}

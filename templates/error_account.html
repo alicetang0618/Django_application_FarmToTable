@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+	<h1>Error: You don't have enough money in your account!</h1>
+	<br />
+	<p>Sorry! We can't place some of your orders / your donation as there isn't enough money in your account. </p>
+	<p>For order errors: The items in your incompleted orders are still in your shopping cart. Please deposit some money into your account before placing the rest orders OR choose offline payment methods!</p>
+	<p>For donation errors: Please deposit some money into your account and try again!</p>
+	<a href="javascript:history.back()">Return to The Previous Page</a>
+{% endblock %}

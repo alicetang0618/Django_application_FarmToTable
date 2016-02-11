@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Complete and Verify Order</title>
+{% endblock %}
+
+{% block body %}
+	<h1>Complete and Modify the Order</h1>
+	<br />
+	<p>Seller: {{ order.seller.first_name }} {{ order.seller.first_name }}</p>
+	<p>Items:</p>
+	<ul>
+	{% for item in order.items.all %}
+	<li>{{ item.product.name }}: {{ item.quantity }}, ${{ item.product.price }} per {{ item.product.unit }}</li>
+	{% endfor %}
+	</ul>
+	{% if not completed %}
+	<form action="" method="post">
+		 {% csrf_token %}
+		 {{ form.as_p }}
+		<input type="submit" value="Verify the Order">
+	</form>
+	{% else %}
+	<p>Pay Method: {{ order.payment }}</p>
+	<p>Message: {{ order.message }}</p></br>
+	<p>You have successfully verified the order!</p>
+	<a href='/checkout/'>Return to Checkout</a>
+	{% endif %}
+{% endblock %}

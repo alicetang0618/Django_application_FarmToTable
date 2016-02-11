@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}	
+	{% block body %}
+	<title>Add To Shopping Cart?</title>
+	    <script type="text/javascript">
+	    function response(){
+	    	var se=confirm("Add to Shopping Cart?");
+	    	if (se==true){
+	    		alert("You have successfully submitted your request!");
+	    	}else{
+	    		alert("Cancelled");
+	    	}
+	    }
+	    var product_id=String({{ product.id }});
+	    </script>
+	</head>
+	<body>
+		<h1>Add To My Shopping Cart</h1>
+		<br />
+		<p>Product: {{ product.name }}</p>
+		<p>Seller: {{ product.owner.first_name }} {{ product.owner.last_name }}</p>
+		  <form action="" method="post" enctype="multipart/form-data">
+		  	  {% csrf_token %}
+		      {{ form.as_p }}
+		      <input type="submit" onclick="response()" value="Add to Shopping Cart">
+		  </form> 
+		  <br></br><a id="return">Return to product page</a>
+		  <script type="text/javascript">
+		  document.getElementById("return").href='/product/'+product_id;
+		  </script>
+{% endblock %}

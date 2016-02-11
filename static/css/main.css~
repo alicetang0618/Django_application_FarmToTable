@@ -1,0 +1,6 @@
+body{
+	font:40px/30px Helvetica, Helvetica, Arial; 
+	background: url("images/introbackground.png"); 
+	color: Beige;
+	text-align: center;
+}

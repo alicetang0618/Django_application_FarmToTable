@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>View the Words Most Frequently Searched</h1>
+<h3> Top 10 Words</h3>
+<ul>
+{% for word in top10 %}
+<li>{{ word }}
+</li>
+{% endfor %}
+</ul>
+
+<h1>View a certain number of most frequently searched words in a given time</h1>
+<p>To view most frequent words in history: set the number of weeks 0</p>
+<form action="" method="post">
+		  	  {% csrf_token %}
+		      {{ form.as_p }}
+<input type="submit" onclick="response()" value="submit">
+</form><br/>
+{% if filled %}
+<h3>Most Frequent words</h3>
+<ul>
+{% for word in most %}
+<li>{{ word }}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<h1>Buyer Discussion Board</h1>
+{% if num == 0%}
+<p>No messages from buyers yet!</p>
+{% else %}
+<ul>
+{% for message in messages %}
+<li><p>User: {{message.sender.first_name}} {{message.sender.last_name}}</p> 
+<p>Comment: {{message.text}}</p> </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% if user.is_authenticated %}
+<p>Post a comment on the discussion board: <a href = "/discussion/">Click Here</a></p>
+{% endif %}
+
+{% endblock %}

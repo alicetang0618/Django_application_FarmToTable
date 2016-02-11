@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	    <title>{{viewuser.first_name}}'s Profile</title>
+	    <script type="text/javascript">
+
+	    	function donateresponse(){
+	    		alert("You have successfully submitted your donation!");
+	    	}
+
+	    	function rateresponse(){
+	    		alert("You have successfully submitted your rating and comment!");
+	    	}
+	    	
+	    	function messageresponse(){
+	    		alert("You have successfully sent your message!");
+	    	}
+	    </script>
+	    
+{% endblock %}
+
+{% block body %}
+        <h1>{{viewuser.first_name}}'s Profile</h1>
+		<div class ="info">
+		<p>My name: {{viewuser.first_name}} {{viewuser.last_name}}</p>
+		<p>I am a 
+		{% if viewuser.usertype == 'S' %}
+		seller
+		{% else %}
+		buyer
+		{% endif %}
+		</p>
+		<p>Email: {{viewuser.email}}</p>
+		<p>Introduction: {{viewuser.introduction}}</p>
+		<img src = "{{MEDIA_URL}}{{viewuser.picture}}" style="width:600px;height:400px">
+	</div>
+
+		{% if viewuser.usertype == 'S' %}
+		</br><p><strong>My Products:</strong></p>
+		{% if num_product == 0 %}
+		<p>I don't have any products now.</p>
+		{% else %}
+		<ul>
+		{% for product in products %}
+		<li>
+			<a href="{% url 'product' product.id %}">{{product.name}}: {{ product.quantity }}, {{ product.price }} per {{ product.unit }}</a>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+
+		{% if user.is_authenticated and viewuser != user.profile %}
+		</br><p><strong>Make a donation to the user:</strong></p>
+		<form action="" method="post">
+        {% csrf_token %}
+        {{ donateform }}
+        <input type="submit" name="donate" onclick="donateresponse()" value="Submit Donation" />
+        </form>
+        {% endif %}
+
+		{% endif %}
+
+		</br><p><strong>My Donations:</strong></p>
+		{% if num_donation == 0 %}
+		<p>I haven't donated yet.</p>
+		{% else %}
+		<ul>
+		{% for donation in donations %}
+		<li>
+			<p>{{donation.time}}: {{donation.receipient.first_name}} {{donation.receipient.last_name}}, ${{ donation.amount }}</p>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+
+		<div class ="comment">
+		{% if user.is_authenticated and viewuser != user.profile %}
+		</br><p><strong>Rate {{viewuser.first_name}} and/or write a comment here:</strong></p>
+		<form action="" method="post">
+        {% csrf_token %}
+        {{ rateform.as_p }}
+        <input type="submit" name="rate_submit" onclick="rateresponse()" value="Submit Rating/Comment" />
+        </form>
+
+
+        </br><p><strong>Send a private message to {{viewuser.first_name}} here:</strong></p>
+		<form action="" method="post">
+        {% csrf_token %}
+        {{ messageform.as_p }}
+        <input type="submit" name="message_submit"  onclick="messageresponse()" value="Submit Message" />
+        </form>
+    </div>
+        {% endif %}
+
+        <div class = "rating">
+        </br><p><strong>Ratings and Comments on Me:</strong></p>
+        {% if num_rating == 0 %}
+        <p>I haven't been rated or commented yet.</p>
+        {% else %}
+		<ul>
+		{% for rating in ratings %}
+		<li>
+			<p>Rater/Commenter: {{rating.rater.first_name}} {{rating.rater.last_name}}</p> 
+			<p>Time: {{ rating.time }}</p>
+			<p>Rate: {{ rating.rate }}</p>
+			<p>Comment: {{ rating.comment }}</p>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+{% endblock %}

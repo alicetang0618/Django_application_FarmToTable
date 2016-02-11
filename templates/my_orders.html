@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<title>My Orders</title>
+
+{% block body %}
+
+<body>
+<h1>My Orders</h1>
+<h4> Order Status: </h4>
+<p>"X",pending</p>
+<p>"P",paid</p>
+<p>"S",submitted by user</p>
+<p>"CA",cancelled by user</p>
+<p>"CS",comfirmed by seller</p>
+<p>"D",delivered</p>
+<p>"R",received by buyer</p>
+
+</br>
+{% if num == 0 %}
+    <p>You don't have any orders.</p>
+{% else %}
+    <ul>
+    {% for order in orders %}
+    <li>
+    {% if request.user.profile.usertype == 'B' %}
+        <a href="{% url 'order' order.id %}">Seller: {{ order.seller.first_name }} {{ order.seller.last_name }}</a>
+    {% else %}
+        <a href="{% url 'order' order.id %}">Buyer: {{ order.buyer.first_name }} {{ order.buyer.last_name }}</a>
+    {% endif %}
+        <p>Order Status: {{ order.status }}</p>
+    </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+</body>
+
+{% endblock %}

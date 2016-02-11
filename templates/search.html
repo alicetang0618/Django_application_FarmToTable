@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+    {% block body %}
+        <title>Search</title>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Find My Favorite Product</h1>
+        </div>
+
+        <div class="order">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" name = "fresh" value="Order By Fresheness"/>
+            </form>
+        </div>
+
+
+        <div class="order">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" name = "price" value="Order by Price" />
+            </form>
+        </div>
+
+        <div class="order">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" name = "quantity" value="Order by Quantity" />
+            </form>
+        </div>
+
+        <div class="order">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="submit" name = "sales" value="Order by Popularity" />
+            </form>
+        </div>
+
+
+        <div>
+            {% if products %}
+            <p>Product Found:</p>
+            {% for product in products %}
+        <li>
+            <a href="{% url 'product' product.id %}">
+                {{product.name}} - {{product.production_date}} -{{product.price}}</a>
+        </li>
+            {% endfor %}    
+            {% endif %}
+            <p>Not what you are looking for? Please leave a comment 
+                so we will deliver the options to you in the future!</p>
+            <a href ="/discussion/">comment</a>
+        </div>
+
+    <a href="/home/">Home</a>
+    {% endblock %}

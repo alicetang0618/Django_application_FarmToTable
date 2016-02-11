@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<title>Best Seller</title>
+<div class="top10">
+<h1>View Best Sellers</h1>
+<h3> Top 10 Sellers</h3>
+<ul>
+{% for product in top10 %}
+<li><a href="{% url 'product' product.id %}">{{ product.name }}</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+
+<h2>View a certain number of best sellers in a given time and/or a category</h2>
+<p>To view best sellers in history: set the number of weeks 0</p>
+<form action="" method="post">
+		  	  {% csrf_token %}
+		      {{ form.as_p }}
+<input type="submit" onclick="response()" value="Who are the best sellers">
+</form><br/>
+{% if filled %}
+<h3>Best Sellers</h3>
+{% if num == 0 %}
+<p>Sorry, no products in the given category are sold in this time period.</p>
+{% else %}
+<ul>
+{% for product in best %}
+<li><a href="{% url 'product' product.id %}">{{ product.name }}</a>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endif %}
+{% endblock %}

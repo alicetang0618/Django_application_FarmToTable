@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{%block body%}
+{% if user.is_authenticated %}
+
+<h1>My comment</h1>
+<form action='' method="post">
+   {% csrf_token %}
+   {{messageform.as_p}}
+   <input type="submit" value="submit" />
+</form>
+
+<h1>Discussion Board</h1>
+{% if num == 0%}
+<p>No discussion information yet!</p>
+{% else %}
+<ul>
+{% for message in messages %}
+<li><p>User: {{message.sender.first_name}} {{message.sender.last_name}}</p> 
+	{% if message.sender.usertype == "S" %}
+	<p>User Type: Seller</p>
+	{% else %}
+	<p>User Type: Buyer</p>
+	{% endif %}
+<p>Comment: {{message.text}}</p> </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% endif %}
+
+{% if not user.is_authenticated %}
+<p>Interested in what we do? Log in or Register now!</p>
+<a href='/login/'>Log In</a>
+<a href='/register/'>Register Here</a>
+<br></br><a href="/home/">Home</a>
+{% endif %}
+
+{% endblock %}
+

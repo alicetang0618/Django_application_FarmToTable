@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+	{% block body %}
+	    <title>My Shopping Cart</title>
+	   	<script type="text/javascript">
+
+            function response(){
+                var se=confirm("Remove all items from your Shopping Cart?");
+		    	if (se==true){
+		    		alert("You have successfully cleared your shopping cart!");
+		    	}else{
+		    		alert("Cancelled");
+		    	}
+            }
+
+   		 </script>
+	</head>
+	<body>
+		<h1>My Shopping Cart</h1>
+		{% if num != 0 %}
+		<p>Click on an item to modify or delete it:</p>
+		<ul>
+		{% for item in items %}
+		<li>
+		    <a href="{% url 'item' item.id %}">
+		    {{ item.product.name }} : {{ item.quantity }} {{ item.product.unit}}</a>
+		</li>
+		{% endfor %}
+		</ul>
+		<p>Total Amount: ${{ amount }}</p>
+		<form method="post">
+		 {% csrf_token %}
+		<input type="submit" name="checkout" value="Proceed to Checkout" /><br></br>
+		</form>
+		<p>Clear my shopping cart</p>
+		<form method="post">
+		 {% csrf_token %}
+		<input type="submit" name="clear" onclick="response()" value="Clear all items" /><br></br>
+		</form>
+		{% else %}
+		<p>You don't have any items in your shopping cart!</p>
+		{% endif %}
+	{% endblock %}

@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+	{% block body %}
+	<title>Check Out</title>
+	<h1>Check Out</h1>
+	<p>Double check your orders:</p>
+	<ul>
+	{% for order, amount in order_amount.items %}
+	<li>
+	<p>Seller: {{ order.seller.first_name }} {{ order.seller.last_name }}</p>
+	<p>Total Amount: ${{ amount }}</p>
+	<p><strong>Items:</strong></p>
+	<ul>			
+	{% for item in order.items.all %}	
+    <li>{{ item.product.name }} : {{ item.quantity }} {{ item.product.unit }}</li>
+	{% endfor %}
+	</ul>
+	{% if order.payment == "0" %}
+	<form method="post">
+	 {% csrf_token %}
+	 <input type="submit" name="{{order.id}}" value="Complete the order" />
+	</form>
+	{% else %}
+	<p>Pay Method: {{ order.payment }}</p>
+	<p>Message: {{ order.message }}</p></br>
+	{% endif %}
+	{% endfor %}
+	</li>
+	</ul>
+	<form method="post">
+	 {% csrf_token %}
+	 <input type="submit" name="submit" value="Submit your orders" />
+	</form>
+	<br></br><a href="/home/">Home</a>
+	{% endblock %}

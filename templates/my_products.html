@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+	{% block body %}
+	
+  <link rel="stylesheet" href="{% static 'css/myprofile.css' %}" type="text/css"/>
+		<title>My Products</title>
+		<h1>My Products</h1>
+		<p>Click on the name of a product to view or modify or delete it!</p>
+		{% if num == 0 %}
+		<p>You don't have any products.</p>
+		{% else %}
+		<ul>
+		{% for product in products %}
+		<li>
+		    <a href="{% url 'product' product.id %}">
+		    {{ product.name }}</a>
+		</li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+		<a href = '/add_product/'>Add A Product</a>
+	{% endblock %}

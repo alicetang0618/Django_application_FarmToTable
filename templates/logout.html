@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+	<head>
+	    <title>{% block title %}[Farm to Table] Logged Out{% endblock %}</title>
+	    <link rel="stylesheet" href="{% static 'css/register.css' %}" type="text/css"/>
+	</head>
+	<body>
+		<h1>Log Out</h1>
+		<p>You have successfully logged out!</p>
+		<a href="/login">Log In</a>
+		<a href="/home/">Home</a>
+	 	
+	</body>
+</html>

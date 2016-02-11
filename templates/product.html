@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+	{% block body %}
+	    <title>{{ product.name }}</title>
+	    <script type="text/javascript">
+	    	function likeresponse(){
+	    		{% if not liked %}{
+	    			alert("You have successfully liked this product!");
+	    		} {% else %}{
+	    			alert("You have already liked this product!");
+	    		}{% endif %}
+	    	}
+
+	    	function removeresponse(){
+	    		alert("You have successfully removed this product!");
+	    	}
+
+	    	function rateresponse(){
+	    		alert("You have successfully submitted your rating and comment!");
+	    	}
+	    	
+	    </script>
+	</head>
+	<body>
+		<h1>{{ product.name }}</h1>
+		<a href="{% url 'profile' product.owner.id %}">Owner: {{ product.owner.first_name }} {{ product.owner.last_name}}</a>
+		<p>Origin: {{ product.origin }}</p>
+		<p>Category: {{ product.category }}</p>
+		<p>Quantity: {{ product.quantity }}</p>
+		<p>Price: {{ product.price }} per {{ product.unit }}</p>
+		<p>Production Date: {{ product.production_date }}</p>
+		<p>Expiration Date: {{ product.expiration_date }}</p>
+		<p>Description: {{ product.description }}</p>
+		<img src="{{ MEDIA_URL }}{{product.picture}}" style="width:600px;height:400px">
+		<p>Quantities Sold in last three months: {{ sold }} {{ product.unit }}</p>
+		</br><p><strong>Ratings:</strong></p>
+		{% if num_rating == 0 %}
+		<p>This product has no ratings or comments yet.</p>
+		{% else %}
+		<p>Average Rating: {{avgrating}}</p>
+		<ul>
+			{% for rating in ratings %}
+			<li>			
+			<p>Rater/Commenter: {{rating.rater.first_name}} {{rating.rater.last_name}}</p> 
+			<p>Time: {{ rating.time }}</p>
+			<p>Rate: {{ rating.rate }}</p>
+			<p>Comment: {{ rating.comment }}</p>
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+
+		{% if  user.is_authenticated %}
+		{% if user.profile.usertype == "S" %}
+		<form method="post">
+		    {% csrf_token %}
+		    <input type="hidden" name="product_id" value="{{ product.id }}" />
+		    <input type="submit" name="remove" onclick="removeresponse()" value="Remove" />
+		    <input type="submit" name="modify" value="Modify" />
+		</form>
+		{% else %}
+		<form action="" method="post">
+		    {% csrf_token %}
+		    <input type="hidden" name="product_id" value="{{ product.id }}" />
+		    <input type="submit" name="like" onclick="likeresponse()" value="Like It" />
+		    <input type="submit" name="cart" value="Add To Shopping Cart" />
+		</form>
+		    {% if buyer %}
+		    <p> Please rate from 0 to 5 </p>
+		    <form action="" method="post">
+		    {% csrf_token %}
+		    {{ rateform }}
+		    <input type="submit" name="rate_submit" onclick="rateresponse()" value = "Rate It Now" />
+		  	</form>   
+		    {% endif %}
+		<br></br><a href="/shopping_cart/">Go to My Shopping Cart</a>
+		{% endif %}
+		{% else %}
+		<p>Interested in this product? Log in or Register now!</p>
+		<a href='/login/'>Log In</a>
+		<a href='/register/'>Register Here</a>
+		{% endif %}
+
+	{% endblock %}
+

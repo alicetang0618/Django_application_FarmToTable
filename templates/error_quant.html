@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+	<h1>Error: A product you want to buy is out of stock!</h1>
+	<br />
+	{% if error == "order" %}
+	<p>Sorry! We can't place some of your orders as an item has greater quantity than the current quantity of that product. The items in your incompleted orders are still in your shopping cart. Please modify or delete this item before placing the rest orders!</p>
+	{% else %}
+	<p>Sorry! We can't put this item into your shopping cart as it has greater quantity than the current quantity of that product. Please modify or delete this item before placing the rest orders!</p>
+	{% endif %}
+	<p>Product: {{ item.product.name }}</p>
+	<p>Quantity you want to buy: {{ item.quantity }}</p>
+	<p>Quantity available: {{ item.product.quantity }}</p>
+	<a href="{% url 'modify_item' item.id %}">Change the quantity you want to buy</a>
+	<a href="javascript:history.back()">Return to the previous page</a>
+{% endblock %}
