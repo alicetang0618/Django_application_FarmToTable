@@ -86,8 +86,8 @@ Message
 	Buyers and sellers can exchange messages.  Go to their profile pages.
 
 Shopping cart, Check out & Payment
-	Currently users have their accounts registered with our website. 
-  Upon checkout, they could choose to pay differently: online, offline or on delivery. Orders will be received and confirmed by the seller or be canceled by either party. Seller can charge extra delivery fee. 
+- Currently users have their accounts registered with our website. 
+- Upon checkout, they could choose to pay differently: online, offline or on delivery. Orders will be received and confirmed by the seller or be canceled by either party. Seller can charge extra delivery fee. 
 
 My Finance
 	Monitor your spending in the last three months and view by category.
