@@ -10,17 +10,15 @@ Python Packages Required
   - Scipy
 
 Launch The Program
-  •	Enter the Farmtotable directory. Run “python manage.py runserver” to start exploring.
-  •	For error message “That port is already in use”, run “sudo fuser –k 8000/tcp” and rerun the server
+  - Enter the Farmtotable directory. Run “python manage.py runserver” to start exploring.
+  - For error message “That port is already in use”, run “sudo fuser –k 8000/tcp” and rerun the server
 
 Two Ways To Navigate Through Our Site!!!
-	
-db.sqlite3 is a preloaded database. 
 
-•	The Lone Wolf:
-  o	Move the db.sqlite3 to a separate directory, delete all files in applications/migrations, run “python manage.py syncdb” to create a new empty database.
-  o	Start exploring our website with an empty back-end database 
-  o	Register your own users as buyers or sellers and try out the different functionalities.
+- The Lone Wolf:
+  - Move the db.sqlite3 to a separate directory, delete all files in applications/migrations, run “python manage.py syncdb” to create a new empty database.
+  - Start exploring our website with an empty back-end database 
+  - Register your own users as buyers or sellers and try out the different functionalities.
 
 •	In A Crowd:
   o	Fixture file contains the testing data and they are preloaded into db.sqlite3. Move it to the directory to interact with it.
